@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+storage:
+  type: "local" # "local" または "s3" を選択
+  local:
+    path: "uploads" # ローカルストレージの保存先ディレクトリ
+  # s3:
+  #   bucket: "your-s3-bucket-name"
+  #   region: "ap-northeast-1"
