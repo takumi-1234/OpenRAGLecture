@@ -1,0 +1,63 @@
+/ OpenRAGLecture/.gitignore
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Environment variables
+.env
+.env.*
+!/.env.example
+
+# IDE settings
+.idea/
+.vscode/
+
+# Log files
+*.log
+logs/
+*.log.*
+
+# Uploaded files
+uploads/
+
+# Dependency directories
+vendor/
+
+# Build outputs
+/build/
+/dist/
+
+# MySQL Settings
+MYSQL_DATABASE=open_rag_lecture
+MYSQL_USER=user
+MYSQL_PASSWORD=password
+MYSQL_ROOT_PASSWORD=rootpassword
+
+# Google API Key
+GOOGLE_API_KEY="your-google-api-key-here"
+
+# Tools managed by Makefile
+/tools/
+
+# test_data files
+test_data/
+
+# tmp files
+tmp/
+
+gcp-credentials.json
+
+# 機密ファイル除外
+*.json
+*.key
+migrate

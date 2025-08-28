@@ -1,0 +1,71 @@
+# configs\config.defaults.yaml
+
+# open-rag-lecture/configs/config.defaults.yaml
+
+server:
+  port: "8180"
+  mode: "debug"
+  read_timeout_seconds: 15
+  write_timeout_seconds: 15
+
+database:
+  mysql:
+    user: "user"
+    password: "password"
+    host: "db"
+    port: "3306"
+    dbname: "open_rag_lecture"
+    max_open_conns: 25
+    max_idle_conns: 10
+    conn_max_lifetime_minutes: 5
+
+vector_db:
+  qdrant:
+    host: "qdrant"
+    port: 6333
+    grpc_port: 6334
+    api_key: ""
+    use_tls: false
+    collection_name: "lecture_chunks"
+    vector_size: 768 # text-embedding-005 のデフォルト次元数は768
+
+cache:
+  redis:
+    host: "redis"
+    port: 6379
+    password: ""
+    db: 0
+
+auth:
+  jwt:
+    secret_key: "your-very-secret-key-that-is-long-and-secure-change-this"
+    access_token_expiry_hours: 24
+    refresh_token_expiry_days: 7
+
+storage:
+  type: "local"
+  local:
+    path: "/app/uploads"
+  s3:
+    bucket: ""
+    region: ""
+    endpoint: ""
+    access_key: ""
+    secret_key: ""
+    use_ssl: true
+
+google:
+  api_key: "your-google-api-key"
+  project_id: "your-gcp-project-id"   # ★★★ 追加 ★★★
+  location: "us-central1"             # ★★★ 追加 ★★★
+  embedding_model: "text-embedding-005" # ★★★ 修正 ★★★
+  llm_model: "gemini-1.5-flash"
+
+logging:
+  level: "info"
+  encoding: "json"
+
+telemetry:
+  enabled: true
+  exporter_endpoint: "localhost:4317"
+  insecure: true
